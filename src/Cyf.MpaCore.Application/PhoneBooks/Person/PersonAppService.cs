@@ -13,17 +13,12 @@ namespace Cyf.MpaCore.PhoneBooks.Person
 {
     public class PersonAppService : MpaCoreAppServiceBase, IPersonAppService
     {
-
         private readonly IRepository<Persons.Person> _personRepository;
-
 
         public PersonAppService(IRepository<Persons.Person> personRepository)
         {
             _personRepository = personRepository;
         }
-
-
-
 
         public async Task CreateOrUpdatePersonAsync(CreateOrUpdatePersonInput input)
         {
@@ -61,10 +56,7 @@ namespace Cyf.MpaCore.PhoneBooks.Person
         {
             var person = await _personRepository.GetAllIncluding(a => a.PhoneNumbers).FirstOrDefaultAsync(a => a.Id == input.Id.Value);
             return ObjectMapper.Map<PersonListDto>(person);
-
         }
-
-
 
         protected async Task UpdatePersonAsync(PersonEditDto input)
         {
@@ -77,8 +69,6 @@ namespace Cyf.MpaCore.PhoneBooks.Person
             var entity = ObjectMapper.Map<Persons.Person>(input);
             await _personRepository.InsertAsync(entity);
         }
-
-
 
         public async Task<GetPersonForEditOutput> GetPersonForEditAsync(NullableIdDto<int> input)
         {

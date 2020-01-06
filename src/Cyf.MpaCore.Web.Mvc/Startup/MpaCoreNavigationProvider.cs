@@ -44,8 +44,14 @@ namespace Cyf.MpaCore.Web.Startup
                         icon: "local_offer",
                         requiredPermissionName: PermissionNames.Pages_Roles
                     )
-                )
-                .AddItem(
+                ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Persons,
+                        L("Persons"),
+                        url: "Persons",
+                        icon: "local_offer"
+                     )
+                ).AddItem(
                     new MenuItemDefinition(
                         PageNames.About,
                         L("About"),

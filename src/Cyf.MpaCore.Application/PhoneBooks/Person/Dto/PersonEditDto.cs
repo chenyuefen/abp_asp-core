@@ -36,7 +36,7 @@ namespace Cyf.MpaCore.PhoneBooks.Person.Dto
         /// <summary>
         /// 电话号码
         /// </summary>
-        public List<PhoneNumberEditDto> PhoneNumbers { get; set; }
+        //public List<PhoneNumberEditDto> PhoneNumbers { get; set; }
 
     }
 }
